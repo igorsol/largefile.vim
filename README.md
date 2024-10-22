@@ -1,6 +1,8 @@
 # largefile.vim
 Mirror of the Large File vim plugin by Charles E. Campbell usable with vim-plug
+
 See http://www.drchip.org/astronaut/vim/index.html#LARGEFILE
+
 Manual at http://www.drchip.org/astronaut/vim/doc/LargeFile.txt.html
 
 ## History
