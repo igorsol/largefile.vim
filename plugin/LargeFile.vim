@@ -69,7 +69,7 @@ fun! s:LargeFile(force,fname)
      au LargeFile BufEnter  <buffer> call s:LargeFileEnter()
      au LargeFile BufLeave  <buffer> call s:LargeFileLeave()
 	endif
-    au LargeFile BufUnload <buffer> augroup LargeFileAU|au! * <buffer>|augroup END
+    au LargeFile BufUnload <buffer> au! LargeFileAU * <buffer>
    augroup END
    let b:LargeFile_mode = 1
 "   call Decho("turning  b:LargeFile_mode to ".b:LargeFile_mode)
@@ -125,9 +125,7 @@ fun! s:Unlarge()
   endif
   syn on
   doau FileType
-  augroup LargeFileAU
-   au! * <buffer>
-  augroup END
+  au! LargeFileAU * <buffer>
   call s:LargeFileLeave()
   echomsg "***note*** stopped large-file handling"
 "  call Dret("s:Unlarge")
